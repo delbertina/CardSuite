@@ -25,17 +25,19 @@ public class WarGame extends Application{
         PlayPane panePlay = new PlayPane();
 
         //make buttons
-        Button oneButton = new Button("Stand");
-        Button twoButton = new Button("Hit");
-        Button threeButton = new Button("Reset");
+        Button oneButton = new Button("P1 Play");
+        Button twoButton = new Button("P2 Play");
+        Button threeButton = new Button("AI Toggle");
+        Button fourButton = new Button("Reset");
 
         //position buttons
         oneButton.setTranslateX(-(screenWidth/2)+30);
         //standButton.setTranslateY((screenHeight/2)-10);
         twoButton.setTranslateX(-(screenWidth/2)+90);
         //hitButton.setTranslateY((screenHeight/2)-10);
-        threeButton.setTranslateX(-(screenWidth/2)+150);
+        threeButton.setTranslateX(-(screenWidth/2)+210);
         // resetButton.setTranslateY((screenHeight/2)-10);
+        fourButton.setTranslateX(-(screenWidth/2)+270);
 
         //set button actions
         oneButton.setOnAction(e ->{
@@ -48,9 +50,12 @@ public class WarGame extends Application{
         threeButton.setOnAction(e ->{
             panePlay.threePressed();
         });
+        fourButton.setOnAction(e ->{
+            panePlay.fourPressed();
+        });
 
         StackPane pane = new StackPane();
-        pane.getChildren().addAll(panePlay,oneButton,twoButton,threeButton);
+        pane.getChildren().addAll(panePlay,oneButton,twoButton,threeButton, fourButton);
 
         Scene scene = new Scene(pane, screenWidth,screenHeight);
         panePlay.setBackground(new Background(background));
@@ -70,7 +75,30 @@ public class WarGame extends Application{
         boolean comPlayer;
 
         public PlayPane() {
+            //set initial values
 
+            //make deck
+            deck = new Deck();
+
+            //shuffle deck
+            deck.shuffle();
+            deck.shuffle();
+            deck.shuffle();
+            //make player 1
+            player1 = new Hand();
+            player1.setCoords(50,screenHeight-200);
+            //make player 2
+            player2 = new Hand();
+            player2.setCoords(50,50);
+            //split to 2 players
+
+            //setup points and winner
+            points = new Text(screenWidth/2,screenHeight/2,"Player1: " + player1.getPoints() + " - " + "Player2: " + player2.getPoints());
+            winner = new Text(screenWidth/2, (screenHeight/2) + 20, "First to 0 cards looses");
+            points.setStroke(Color.WHITE);
+            winner.setStroke(Color.WHITE);
+
+            getChildren().addAll(points,winner);
         }
 
         public void onePressed(){
@@ -80,8 +108,12 @@ public class WarGame extends Application{
         public void twoPressed(){
 
         }
-        
+
         public void threePressed(){
+
+        }
+
+        public void fourPressed(){
 
         }
     }

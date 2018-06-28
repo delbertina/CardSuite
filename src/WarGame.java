@@ -27,7 +27,7 @@ public class WarGame extends Application{
         //make buttons
         Button oneButton = new Button("P1 Play");
         Button twoButton = new Button("P2 Play");
-        Button threeButton = new Button("AI Toggle");
+        Button threeButton = new Button(panePlay.isComPlayer() ? "AI: ON" : "AI: OFF");
         Button fourButton = new Button("Reset");
 
         //position buttons
@@ -48,7 +48,8 @@ public class WarGame extends Application{
             panePlay.twoPressed();
         });
         threeButton.setOnAction(e ->{
-            panePlay.threePressed();
+            panePlay.toggleAI();
+            threeButton.setText(panePlay.isComPlayer() ? "AI: ON" : "AI: OFF");
         });
         fourButton.setOnAction(e ->{
             panePlay.fourPressed();
@@ -76,6 +77,7 @@ public class WarGame extends Application{
 
         public PlayPane() {
             //set initial values
+            comPlayer = true;
 
             //make deck
             deck = new Deck();
@@ -109,8 +111,12 @@ public class WarGame extends Application{
 
         }
 
-        public void threePressed(){
+        public void toggleAI(){
+            comPlayer = !comPlayer;
+        }
 
+        public boolean isComPlayer() {
+            return comPlayer;
         }
 
         public void fourPressed(){

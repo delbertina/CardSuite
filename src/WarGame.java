@@ -41,18 +41,18 @@ public class WarGame extends Application{
 
         //set button actions
         oneButton.setOnAction(e ->{
-            panePlay.onePressed();
+            panePlay.p1Play();
         });
 
         twoButton.setOnAction(e ->{
-            panePlay.twoPressed();
+            panePlay.p2Play();
         });
         threeButton.setOnAction(e ->{
             panePlay.toggleAI();
             threeButton.setText(panePlay.isComPlayer() ? "AI: ON" : "AI: OFF");
         });
         fourButton.setOnAction(e ->{
-            panePlay.fourPressed();
+            panePlay.reset();
         });
 
         StackPane pane = new StackPane();
@@ -93,6 +93,11 @@ public class WarGame extends Application{
             player2 = new Hand();
             player2.setCoords(50,50);
             //split to 2 players
+            //subtract 1 to eliminate odd size problems
+            for(int i=0; i<deck.getSize()-1;){
+                player1.addCard(deck.deal(true));
+                player2.addCard(deck.deal(true));
+            }
 
             //setup points and winner
             points = new Text(screenWidth/2,screenHeight/2,"Player1: " + player1.getPoints() + " - " + "Player2: " + player2.getPoints());
@@ -103,11 +108,11 @@ public class WarGame extends Application{
             getChildren().addAll(points,winner);
         }
 
-        public void onePressed(){
+        public void p1Play(){
 
         }
 
-        public void twoPressed(){
+        public void p2Play(){
 
         }
 
@@ -119,8 +124,12 @@ public class WarGame extends Application{
             return comPlayer;
         }
 
-        public void fourPressed(){
+        public void reset(){
 
+        }
+
+        public void checkWin(){
+            
         }
     }
 }

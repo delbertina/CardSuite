@@ -109,7 +109,9 @@ public class WarGame extends Application{
         }
 
         public void p1Play(){
+            //put card on board
 
+            //wait for player 2 if no aI ?
         }
 
         public void p2Play(){

@@ -129,7 +129,14 @@ public class WarGame extends Application{
         }
 
         public void checkWin(){
-            
+            //if player 1 has no cards
+            if(player1.getSize() < 1){
+                winner.setText("Player 2 Wins!");
+            }
+            //if player 2 has no cards
+            if(player2.getSize() < 1){
+                winner.setText("Player 1 Wins!");
+            }
         }
     }
 }

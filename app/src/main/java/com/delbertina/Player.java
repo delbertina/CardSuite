@@ -1,3 +1,5 @@
+package com.delbertina;
+
 public class Player {
     public Hand hand;
     private String name;

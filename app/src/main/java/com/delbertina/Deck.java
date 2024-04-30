@@ -1,8 +1,7 @@
-
+package com.delbertina;
 
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.concurrent.ThreadLocalRandom;
@@ -19,7 +18,10 @@ public class Deck extends Rectangle{
     private static int deckArcWidth = 10;
     
     private ArrayList<Card> cards;
-    private Rectangle location;
+    //
+    // Unused, but what was I planning with this?
+    //
+    // private Rectangle location;
     
     public Deck(){
 

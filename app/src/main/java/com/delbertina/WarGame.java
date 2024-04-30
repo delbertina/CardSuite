@@ -1,3 +1,5 @@
+package com.delbertina;
+
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -19,7 +21,7 @@ public class WarGame extends Application{
     public void start(Stage stage){
 
 
-        Image greenwool = new Image("/greenwool.png");
+        Image greenwool = new Image("img/greenwool.png");
         BackgroundImage background = new BackgroundImage(greenwool, REPEAT, REPEAT, DEFAULT, BackgroundSize.DEFAULT);
 
         PlayPane panePlay = new PlayPane();

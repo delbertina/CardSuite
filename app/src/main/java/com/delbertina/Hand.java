@@ -1,12 +1,16 @@
-import javafx.scene.shape.Rectangle;
+package com.delbertina;
 
+import javafx.scene.shape.Rectangle;
 import java.util.ArrayList;
 
 public class Hand {
 
-    private char[] alpha = {'1', '2', '3', '4', '5', '6', '7', '8', '9', 't', 'j', 'q', 'k'};
-    private String[] suits = {"hearts", "clubs", "diamonds", "spades"};
-    private String[] color = {"red", "black"};
+    //
+    // Need to figure out what this was for, it's been years since I made this
+    //
+    // private char[] alpha = {'1', '2', '3', '4', '5', '6', '7', '8', '9', 't', 'j', 'q', 'k'};
+    // private String[] suits = {"hearts", "clubs", "diamonds", "spades"};
+    // private String[] color = {"red", "black"};
 
     private int handHeight = 300;
     private int handWidth = 900;

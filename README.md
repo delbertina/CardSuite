@@ -7,5 +7,10 @@
 * Blackjack
 * War
 
-## How to Build
-1. TODO
+### How to Run Release Jar
+*Prerequisite: Java Installed*
+1. java -jar <path to jar\>
+
+### How to Run Project
+*Prerequisite: Java & Gradle Installed*
+1. gradle run

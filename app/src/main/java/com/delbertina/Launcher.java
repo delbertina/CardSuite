@@ -1,3 +1,5 @@
+package com.delbertina;
+
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -16,6 +18,10 @@ import static javafx.scene.layout.BackgroundRepeat.REPEAT;
 
 public class Launcher extends Application{
 
+    public static void main(String[] args) {
+        launch(args);
+    }
+
     @Override
     public void start(Stage stage){
         //setup dimensions
@@ -29,6 +35,10 @@ public class Launcher extends Application{
         logoTx.setFill(Color.LIGHTPINK);
 
         //buttons
+
+        //
+        // What happened to the war game? Add a button for it?
+        //
         Button emptyBt1 = new Button("Empty 1");
         Button emptyBt2 = new Button("Empty 2");
         Button blackjackBt = new Button("Blackjack");
@@ -72,7 +82,7 @@ public class Launcher extends Application{
 
         BackgroundFill btbackground = new BackgroundFill(Paint.valueOf("brown"),CornerRadii.EMPTY, Insets.EMPTY);
 
-        Image greenwool = new Image("/greenwool.png");
+        Image greenwool = new Image("img/greenwool.png");
         BackgroundImage background = new BackgroundImage(greenwool, REPEAT, REPEAT, DEFAULT, BackgroundSize.DEFAULT);
 
 

@@ -1,18 +1,13 @@
+package com.delbertina;
 
 import javafx.scene.image.Image;
-import javafx.scene.layout.BackgroundImage;
-import javafx.scene.layout.BackgroundSize;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 
-import java.net.URL;
 import java.util.concurrent.ThreadLocalRandom;
 
 import static java.util.Arrays.binarySearch;
-import static javafx.scene.layout.BackgroundPosition.DEFAULT;
-import static javafx.scene.layout.BackgroundRepeat.NO_REPEAT;
-import static javafx.scene.layout.BackgroundRepeat.REPEAT;
 
 public class Card extends Rectangle implements Comparable<Card>{
     private static int cardHeight = 100;
@@ -20,19 +15,19 @@ public class Card extends Rectangle implements Comparable<Card>{
     private static int cardArcHeight = 10;
     private static int cardArcWidth = 10;
 
-    private String card1 = ("/img/cardav2.jpg");
-    private String card2 = ("/img/card2v2.jpg");
-    private String card3 = ("/img/card3v2.jpg");
-    private String card4 = ("/img/card4v2.jpg");
-    private String card5 = ("/img/card5v2.jpg");
-    private String card6 = ("/img/card6v2.jpg");
-    private String card7 = ("/img/card7v2.jpg");
-    private String card8 = ("/img/card8v2.jpg");
-    private String card9 = ("/img/card9v2.jpg");
-    private String cardt = ("/img/card10v2.jpg");
-    private String cardj = ("/img/cardjv2.jpg");
-    private String cardq = ("/img/cardqv2.jpg");
-    private String cardk = ("/img/cardkv2.jpg");
+    private String card1 = ("img/cardav2.jpg");
+    private String card2 = ("img/card2v2.jpg");
+    private String card3 = ("img/card3v2.jpg");
+    private String card4 = ("img/card4v2.jpg");
+    private String card5 = ("img/card5v2.jpg");
+    private String card6 = ("img/card6v2.jpg");
+    private String card7 = ("img/card7v2.jpg");
+    private String card8 = ("img/card8v2.jpg");
+    private String card9 = ("img/card9v2.jpg");
+    private String cardt = ("img/card10v2.jpg");
+    private String cardj = ("img/cardjv2.jpg");
+    private String cardq = ("img/cardqv2.jpg");
+    private String cardk = ("img/cardkv2.jpg");
 
 
     private char[] alpha = {'1', '2', '3', '4', '5', '6', '7', '8', '9', 't', 'j', 'q', 'k'};
@@ -50,7 +45,7 @@ public class Card extends Rectangle implements Comparable<Card>{
         this.suit = "hearts";
         this.color = "red";
         this.flipped = false;
-        super.setFill(new ImagePattern(new Image(this.getClass().getResourceAsStream(backgrounds[new String(alpha).indexOf(rank)]))));
+        super.setFill(new ImagePattern(new Image(backgrounds[new String(alpha).indexOf(rank)])));
         super.setStroke(Color.WHITE);
         super.setArcHeight(cardArcHeight);
         super.setArcWidth(cardArcWidth);
@@ -62,7 +57,7 @@ public class Card extends Rectangle implements Comparable<Card>{
         this.suit = "hearts";
         this.color = "red";
         this.flipped = false;
-        super.setFill(new ImagePattern(new Image(this.getClass().getResourceAsStream(backgrounds[new String(alpha).indexOf(rank)]))));
+        super.setFill(new ImagePattern(new Image(backgrounds[new String(alpha).indexOf(rank)])));
         super.setStroke(Color.WHITE);
         super.setArcHeight(cardArcHeight);
         super.setArcWidth(cardArcWidth);
@@ -74,7 +69,7 @@ public class Card extends Rectangle implements Comparable<Card>{
         this.suit = s;
         this.color = c;
         this.flipped = false;
-        super.setFill(new ImagePattern(new Image(this.getClass().getResourceAsStream(backgrounds[new String(alpha).indexOf(rank)]))));
+        super.setFill(new ImagePattern(new Image(backgrounds[new String(alpha).indexOf(rank)])));
         super.setStroke(Color.WHITE);
         super.setArcHeight(cardArcHeight);
         super.setArcWidth(cardArcWidth);
@@ -86,7 +81,7 @@ public class Card extends Rectangle implements Comparable<Card>{
         this.suit = s;
         this.color = c;
         this.flipped = false;
-        super.setFill(new ImagePattern(new Image(this.getClass().getResourceAsStream(backgrounds[new String(alpha).indexOf(rank)]))));
+        super.setFill(new ImagePattern(new Image(backgrounds[new String(alpha).indexOf(rank)])));
         super.setStroke(Color.WHITE);
         super.setArcHeight(cardArcHeight);
         super.setArcWidth(cardArcWidth);
@@ -127,7 +122,7 @@ public class Card extends Rectangle implements Comparable<Card>{
     public void flip(){
         this.flipped = !this.flipped;
         if(isFlipped()){
-            super.setFill(new ImagePattern(new Image(this.getClass().getResourceAsStream(backgrounds[new String(alpha).indexOf(rank)]))));
+            super.setFill(new ImagePattern(new Image(backgrounds[new String(alpha).indexOf(rank)])));
         }
         else{super.setFill(Color.DARKRED);}
     }

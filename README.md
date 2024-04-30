@@ -1,7 +1,11 @@
 # Card Suite
-## Simple suite of card games using JavaFX
+Simple suite of card games using JavaFX.
 
-###### Originally part of a game suite for a school project, but now expanding into suite of only card games.
+## Background
+Originally part of a game suite for a school project, but with asperiations expanding into suite of only card games.
+
+![image](https://github.com/delbertina/CardSuite/assets/6349928/7c82213f-f0f6-4db5-8648-6a805674d4a8)
+
 
 ### Current Games
 * Blackjack

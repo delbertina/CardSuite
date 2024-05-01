@@ -37,11 +37,11 @@ public class Launcher extends Application{
         //buttons
 
         //
-        // What happened to the war game? Add a button for it?
+        // War game is incomplete
         //
-        Button emptyBt1 = new Button("Empty 1");
-        Button emptyBt2 = new Button("Empty 2");
         Button blackjackBt = new Button("Blackjack");
+        Button warGameBt = new Button("War");
+        Button emptyBt = new Button("Coming Soon");
 
         //make buttons do things
         blackjackBt.setOnAction(e -> {
@@ -49,35 +49,38 @@ public class Launcher extends Application{
             game.start(new Stage());
         });
 
-        emptyBt1.setOnAction(e -> {
+        emptyBt.setOnAction(e -> {
 
         });
 
-        emptyBt2.setOnAction(e -> {
-
+        warGameBt.setOnAction(e -> {
+            WarGame game = new WarGame();
+            game.start(new Stage());
         });
 
         blackjackBt.setOnMouseEntered(e -> blackjackBt.setStyle(""));
         blackjackBt.setOnMouseExited(e -> blackjackBt.setStyle(""));
+        warGameBt.setOnMouseEntered(e -> blackjackBt.setStyle(""));
+        warGameBt.setOnMouseExited(e -> blackjackBt.setStyle(""));
 
         //make button pretty
         blackjackBt.setMinWidth(screenWidth*0.8);
-        emptyBt1.setMinWidth(screenWidth*0.8);
-        emptyBt2.setMinWidth(screenWidth*0.8);
+        warGameBt.setMinWidth(screenWidth*0.8);
+        emptyBt.setMinWidth(screenWidth*0.8);
 
         blackjackBt.setMinHeight(64);
-        emptyBt1.setMinHeight(64);
-        emptyBt2.setMinHeight(64);
+        warGameBt.setMinHeight(64);
+        emptyBt.setMinHeight(64);
 
         blackjackBt.setFont(Font.font(32));
-        emptyBt1.setFont(Font.font(32));
-        emptyBt2.setFont(Font.font(32));
+        warGameBt.setFont(Font.font(32));
+        emptyBt.setFont(Font.font(32));
 
         blackjackBt.setTextFill(Color.BEIGE);
-        emptyBt1.setTextFill(Color.BEIGE);
-        emptyBt2.setTextFill(Color.BEIGE);
+        warGameBt.setTextFill(Color.BEIGE);
+        emptyBt.setTextFill(Color.BEIGE);
 
-        options.getChildren().addAll(logoTx,emptyBt1,emptyBt2,blackjackBt);
+        options.getChildren().addAll(logoTx,blackjackBt, warGameBt, emptyBt);
         options.setAlignment(Pos.CENTER);
 
         BackgroundFill btbackground = new BackgroundFill(Paint.valueOf("brown"),CornerRadii.EMPTY, Insets.EMPTY);
@@ -88,8 +91,8 @@ public class Launcher extends Application{
 
         Scene scene = new Scene(options, screenWidth, screenHeight);
 
-        emptyBt1.setBackground(new Background(btbackground));
-        emptyBt2.setBackground(new Background(btbackground));
+        emptyBt.setBackground(new Background(btbackground));
+        warGameBt.setBackground(new Background(btbackground));
         blackjackBt.setBackground(new Background(btbackground));
         options.setBackground(new Background(background));
 
